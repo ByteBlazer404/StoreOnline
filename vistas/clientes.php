@@ -60,12 +60,12 @@ if (isset($_SESSION['usuario'])) {
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Cliente</h1>
+						<h1 class="modal-title fs-5" id="exampleModalLabel">Editar cliente</h1>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						<form id="frmClientes">
-						<input type="hidden" id="idclienteU" name="idclienteU">
+						<form id="frmClientesU">
+							<input type="text" hidden="" id="idclienteU" name="idclienteU">
 							<label>Nombre</label>
 							<input type="text" class="form-control input-sm" id="nombreU" name="nombreU">
 							<label>Apellido</label>
@@ -79,11 +79,12 @@ if (isset($_SESSION['usuario'])) {
 							<label>RFC</label>
 							<input type="text" class="form-control input-sm" id="rfcU" name="rfcU">
 							<p></p>
-							<div class="modal-footer d-flex justify-content-center">
-								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-								<button id="btnAgregarClientesU" type="button" class="btn btn-primary" data-dismiss="modal">Actualizar</button>
-							</div>
 						</form>
+					</div>
+					<div class="modal-footer d-flex justify-content-center">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+						<span id="btnAgregarClientesU" type="button" class="btn btn-primary"
+							data-bs-dismiss="modal">Actualizar</button>
 					</div>
 				</div>
 			</div>
@@ -196,7 +197,7 @@ if (isset($_SESSION['usuario'])) {
 	</script>
 
 
-<?php
+	<?php
 } else {
 	header("location:../index.php");
 }

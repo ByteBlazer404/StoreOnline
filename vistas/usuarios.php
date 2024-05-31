@@ -24,7 +24,7 @@ if (isset($_SESSION['usuario']) and $_SESSION['usuario'] == "admin") {
 				<div id="tablaUsuariosLoad"></div>
 			</div>
 		</div>
-		<div class="modal fade" id="newUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="newUser" tabindex="-1" aria-labelledby="addUser" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -50,7 +50,7 @@ if (isset($_SESSION['usuario']) and $_SESSION['usuario'] == "admin") {
 				</div>
 			</div>
 		</div>
-		<div class="modal fade" id="updateUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="updateUser" tabindex="-1" aria-labelledby="updateUser" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -58,19 +58,20 @@ if (isset($_SESSION['usuario']) and $_SESSION['usuario'] == "admin") {
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						<form id="frmRegistro">
-							<input type="hidden" id="idUsuario" name="idUsuario">
+						<form id="frmRegistroU">
+							<input type="text" hidden="" id="idUsuario" name="idUsuario">
 							<label>Nombre</label>
 							<input type="text" class="form-control input-sm" name="nombreU" id="nombreU">
 							<label>Apellido</label>
 							<input type="text" class="form-control input-sm" name="apellidoU" id="apellidoU">
 							<label>Usuario</label>
 							<input type="text" class="form-control input-sm" name="usuarioU" id="usuarioU">
-							<div class="modal-footer d-flex justify-content-center">
-								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-								<button id="btnActualizaUsuario" type="button" class="btn btn-primary" data-dismiss="modal">Actualizar</button>
-							</div>
 						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+						<button id="btnActualizaUsuario" type="button" class="btn btn-primary"
+							data-bs-dismiss="modal">Actualizar</button>
 					</div>
 				</div>
 			</div>
@@ -206,7 +207,7 @@ if (isset($_SESSION['usuario']) and $_SESSION['usuario'] == "admin") {
 	</script>
 
 
-<?php
+	<?php
 } else {
 	header("location:../index.php");
 }
